@@ -18,8 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText et1,et2,et3;
-    Button btn;
+    EditText et1;
+
     TextView text;
     int i = 2;
 
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String number = s.toString().trim();
 
-                // ফাঁকা ইনপুট হলে পূর্বের কাজ বন্ধ এবং মেসেজ দেখানো
+
                 if (number.isEmpty()) {
                     text.setText("Enter the number for which you want the multiples:");
                     if (runnable != null) {
-                        handler.removeCallbacks(runnable); // পূর্বের অ্যানিমেশন বন্ধ
+                        handler.removeCallbacks(runnable);
                     }
                     return;
                 }
@@ -58,28 +58,28 @@ public class MainActivity extends AppCompatActivity {
                     if (inputNumber <= 0) {
                         text.setText("Please enter a positive number.");
                         if (runnable != null) {
-                            handler.removeCallbacks(runnable); // পূর্বের অ্যানিমেশন বন্ধ
+                            handler.removeCallbacks(runnable);
                         }
                         return;
                     }
 
-                    // গুণফল তৈরি
+
                     StringBuilder multiples = new StringBuilder();
                     for (int i = 1; i <= 10; i++) {
                         multiples.append(i).append("  X  ").append(inputNumber).append("  =  ").append(i * inputNumber).append("\n");
                     }
 
-                    // পূর্ববর্তী Runnable বাতিল করা
+
                     if (runnable != null) {
                         handler.removeCallbacks(runnable);
                     }
 
-                    // নতুন অ্যানিমেশন শুরু
+
                     showMultiplesWithAnimation(text, multiples.toString());
                 } catch (NumberFormatException e) {
                     text.setText("Invalid input! Please enter numeric values.");
                     if (runnable != null) {
-                        handler.removeCallbacks(runnable); // পূর্বের অ্যানিমেশন বন্ধ
+                        handler.removeCallbacks(runnable);
                     }
                 }
             }
