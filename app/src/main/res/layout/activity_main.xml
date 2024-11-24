@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="#FF5722"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:background="@drawable/shape"
+        android:id="@+id/crd1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:background="@drawable/shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_alignParentTop="true"
+                android:textAlignment="center"
+                android:background="@drawable/shape"
+                android:id="@+id/text"
+                android:text="Enter the number for which you want the multiples"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/text"
+                android:textAlignment="center"
+                android:background="@drawable/shape"
+                android:inputType="numberDecimal"
+                android:hint="Enter your number: "
+                android:id="@+id/et1"
+                android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:ems="20"
+                android:padding="5dp"/>
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
